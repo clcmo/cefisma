@@ -1,20 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="titulo descricao">
-  <title id="titulo">Estampa CEFISMA: Física em movimento</title>
-  <desc id="descricao">Composição vetorial de órbitas e ondas em magenta, azul e amarelo, com o nome CEFISMA.</desc>
-  <g fill="none" stroke-linecap="round">
-    <circle cx="232" cy="210" r="142" stroke="#c8124d" stroke-width="8"/>
-    <ellipse cx="232" cy="210" rx="142" ry="52" stroke="#2a44d8" stroke-width="8" transform="rotate(-35 232 210)"/>
-    <ellipse cx="232" cy="210" rx="142" ry="52" stroke="#1c1845" stroke-width="7" transform="rotate(35 232 210)"/>
-    <path d="M105 210h254M232 83v254" stroke="#f7b731" stroke-width="6"/>
-    <path d="M164 210c18-37 36-37 54 0s36 37 54 0 36-37 54 0" stroke="#c8124d" stroke-width="8"/>
-  </g>
-  <circle cx="232" cy="210" r="18" fill="#f7b731" stroke="#1c1845" stroke-width="6"/>
-  <circle cx="352" cy="121" r="12" fill="#f7b731" stroke="#1c1845" stroke-width="5"/>
-  <circle cx="112" cy="287" r="10" fill="#c8124d"/>
-  <g fill="#1c1845">
-    <text x="445" y="184" font-family="Georgia,serif" font-size="26" font-weight="700" letter-spacing="3">CENTRO ACADÊMICO</text>
-    <text x="438" y="265" font-family="Arial,sans-serif" font-size="76" font-weight="900">CEFISMA</text>
-    <path d="M445 292h390" stroke="#c8124d" stroke-width="8"/>
-    <text x="445" y="341" font-family="Georgia,serif" font-size="30" font-weight="700" letter-spacing="2">FÍSICA EM MOVIMENTO</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 200" role="img" aria-labelledby="titulo descricao">
+  <title id="titulo">cefisma</title>
+  <desc id="descricao">Logotipo tipográfico cefisma em minúsculas, com o f de função em magenta e itálico.</desc>
+  <text x="340" y="145" text-anchor="middle" fill="#1c1845" font-family="Bricolage Grotesque, Arial, sans-serif" font-size="124" font-weight="800" letter-spacing="-3">
+    <tspan>ce</tspan><tspan fill="#c8124d" font-family="Source Serif 4, Georgia, serif" font-size="142" font-style="italic" font-weight="600" dy="-3">f</tspan><tspan>isma</tspan>
+  </text>
 </svg>
