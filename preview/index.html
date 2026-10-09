@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Prévia visual da página inicial do CEFISMA, Centro Acadêmico do Instituto de Física da USP."
+    />
+    <title>CEFISMA | Prévia da página inicial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      .preview-note {
+        padding: 0.45rem 0;
+        background: var(--sol);
+        color: var(--tinta);
+        text-align: center;
+        font: 700 0.85rem var(--f-ui);
+      }
+      .preview-camiseta {
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        border-radius: 26px 26px 6px 26px;
+        background: #d7e5eb;
+      }
+      .preview-camiseta svg {
+        width: 78%;
+        height: 78%;
+      }
+      .preview-camiseta.magenta {
+        background: #f2dbe3;
+      }
+      .preview-camiseta.azul {
+        background: #d7e5eb;
+      }
+      .preview-fim {
+        padding-top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="preview-note">Prévia visual · conteúdo demonstrativo</p>
+    <header class="topo">
+      <div class="wrap">
+        <a class="marca" href="#/inicio" aria-label="cefisma, página inicial">
+          <span class="marca-texto">ce<span class="f-funcao">f</span>isma</span>
+        </a>
+        <nav class="nav-principal" aria-label="Navegação principal">
+          <ul id="menu" class="menu">
+            <li><a aria-current="page" href="#inicio">Início</a></li>
+            <li><a href="#supernova">Supernova</a></li>
+            <li><a href="#publicacoes">Comunicação</a></li>
+            <li><a href="#participe">Participe</a></li>
+            <li class="menu-loja"><a href="#blusas">Loja</a></li>
+          </ul>
+        </nav>
+        <div class="topo-acoes">
+          <button
+            type="button"
+            class="nav-toggle"
+            aria-expanded="false"
+            aria-controls="menu"
+          >
+            Menu
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <section class="hero" aria-labelledby="titulo-inicio">
+        <div class="wrap">
+          <div>
+            <h1 id="titulo-inicio">
+              Centro Acadêmico do Instituto de Física da USP
+            </h1>
+            <p class="lede">
+              Um só lugar para o histórico de lutas, a administração, a
+              transparência e a conversa entre a diretoria do CEFISMA e as e os
+              estudantes do IFUSP.
+            </p>
+            <div class="acoes">
+              <a class="btn btn-primario" href="#supernova"
+                >Conheça o Supernova</a
+              >
+              <a class="btn btn-linha" href="#participe">Ver como participar</a>
+            </div>
+          </div>
+          <div class="ondas" aria-hidden="true">
+            <svg class="aneis" viewBox="0 0 520 520">
+              <circle
+                class="anel"
+                style="--i: 0"
+                cx="260"
+                cy="260"
+                r="80"
+                stroke="#f7b731"
+                stroke-width="3"
+              />
+              <circle
+                class="anel"
+                style="--i: 1"
+                cx="260"
+                cy="260"
+                r="125"
+                stroke="#c8124d"
+                stroke-width="4"
+                stroke-dasharray="2 11"
+                stroke-linecap="round"
+              />
+              <circle
+                class="anel"
+                style="--i: 2"
+                cx="260"
+                cy="260"
+                r="170"
+                stroke="#2a44d8"
+                stroke-width="2"
+              />
+              <circle
+                class="anel"
+                style="--i: 3"
+                cx="260"
+                cy="260"
+                r="215"
+                stroke="#c8124d"
+                stroke-width="3"
+                stroke-dasharray="44 16"
+              />
+              <circle
+                class="anel"
+                style="--i: 4"
+                cx="260"
+                cy="260"
+                r="250"
+                stroke="#1c1845"
+                stroke-opacity=".28"
+                stroke-width="2"
+              />
+            </svg>
+            <div class="capa-centro">
+              <svg
+                viewBox="0 0 180 240"
+                role="img"
+                aria-label="Capa demonstrativa do Supernova número 6"
+              >
+                <rect width="180" height="240" fill="#1c1845" />
+                <circle
+                  cx="90"
+                  cy="90"
+                  r="62"
+                  fill="none"
+                  stroke="#f7b731"
+                  stroke-width="3"
+                />
+                <ellipse
+                  cx="90"
+                  cy="90"
+                  rx="72"
+                  ry="24"
+                  fill="none"
+                  stroke="#c8124d"
+                  stroke-width="7"
+                  transform="rotate(-38 90 90)"
+                />
+                <circle cx="90" cy="90" r="8" fill="#f7b731" />
+                <text
+                  x="16"
+                  y="190"
+                  fill="#fff"
+                  font-family="Georgia,serif"
+                  font-size="32"
+                >
+                  Supernova
+                </text>
+                <text
+                  x="16"
+                  y="222"
+                  fill="#f7b731"
+                  font-family="Arial,sans-serif"
+                  font-size="19"
+                >
+                  NÚMERO 6
+                </text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="secao" aria-label="Agenda e publicações">
+        <div class="wrap duas">
+          <div>
+            <h2>Agenda</h2>
+            <ul class="agenda">
+              <li>
+                <time><b>12</b>OUT</time>
+                <div>
+                  <strong>Assembleia estudantil</strong
+                  ><span class="meta">Auditório Abrahão de Moraes</span>
+                </div>
+              </li>
+              <li>
+                <time><b>21</b>OUT</time>
+                <div>
+                  <strong>Encontro aberto do CEFISMA</strong
+                  ><span class="meta">Instituto de Física da USP</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="publicacoes">
+            <h2>Últimas publicações</h2>
+            <ul class="pubs">
+              <li>
+                <span class="tag tag-rd">Comunicação</span
+                ><time class="meta">Atualização</time>
+                <h3>
+                  <a href="#publicacoes">Informes e notícias do Instituto</a>
+                </h3>
+                <p>
+                  Espaço para comunicados, debates e novidades da comunidade do
+                  IFUSP.
+                </p>
+              </li>
+              <li>
+                <span class="tag tag-supernova">Supernova</span
+                ><time class="meta">Edição recente</time>
+                <h3>
+                  <a href="#supernova">Ciência, arte e vida universitária</a>
+                </h3>
+                <p>Textos e produções de estudantes do Instituto de Física.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="secao banda-escura" id="supernova">
+        <div class="wrap faixa-supernova">
+          <div>
+            <h2>Boletim Supernova</h2>
+            <p>
+              Notícias, ciência, arte e resenhas feitas por quem estuda no
+              IFUSP.
+            </p>
+            <div class="acoes">
+              <a class="btn btn-sol" href="#supernova">Ver todas as edições</a
+              ><a
+                class="btn btn-linha"
+                href="#participe"
+                style="border-color: #fff; color: #fff"
+                >Enviar texto ou arte</a
+              >
+            </div>
+          </div>
+          <ul class="capas" aria-label="Edições demonstrativas do Supernova">
+            <li class="capa">
+              <a href="#supernova"
+                ><svg viewBox="0 0 180 240" aria-hidden="true">
+                  <rect width="180" height="240" fill="#c8124d" />
+                  <circle
+                    cx="90"
+                    cy="90"
+                    r="60"
+                    fill="none"
+                    stroke="#f7b731"
+                    stroke-width="5"
+                  />
+                  <path
+                    d="M20 90h140M90 20v140"
+                    stroke="#fff"
+                    stroke-width="2"
+                  />
+                  <text
+                    x="14"
+                    y="192"
+                    fill="#fff"
+                    font-family="Georgia,serif"
+                    font-size="29"
+                  >
+                    Supernova
+                  </text>
+                  <text
+                    x="15"
+                    y="222"
+                    fill="#fff"
+                    font-family="Arial,sans-serif"
+                    font-size="16"
+                  >
+                    EDIÇÃO 06
+                  </text></svg
+                ><span>Supernova #6</span></a
+              >
+            </li>
+            <li class="capa">
+              <a href="#supernova"
+                ><svg viewBox="0 0 180 240" aria-hidden="true">
+                  <rect width="180" height="240" fill="#2a44d8" />
+                  <path
+                    d="M0 145Q45 55 90 145T180 145"
+                    fill="none"
+                    stroke="#f7b731"
+                    stroke-width="10"
+                  />
+                  <circle
+                    cx="90"
+                    cy="90"
+                    r="45"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="3"
+                  />
+                  <text
+                    x="14"
+                    y="192"
+                    fill="#fff"
+                    font-family="Georgia,serif"
+                    font-size="29"
+                  >
+                    Supernova
+                  </text>
+                  <text
+                    x="15"
+                    y="222"
+                    fill="#f7b731"
+                    font-family="Arial,sans-serif"
+                    font-size="16"
+                  >
+                    ARQUIVO
+                  </text></svg
+                ><span>Arquivo</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="secao banda-lavanda vitrine-blusas" id="blusas">
+        <div class="wrap">
+          <div class="cab-secao">
+            <div class="vitrine-blusas-copy">
+              <h2>Blusas do CEFISMA</h2>
+              <p>
+                Vista as cores do Centro Acadêmico e leve essa história com
+                você.
+              </p>
+              <a class="btn btn-primario btn-pequeno" href="#blusas"
+                >Ver a loja completa</a
+              >
+            </div>
+            <img
+              class="vitrine-blusas-estampa"
+              src="assets/images/estampa-cefisma.svg"
+              alt="Estampa CEFISMA: Física em movimento"
+            />
+          </div>
+          <ul class="grade-produtos">
+            <li class="produto">
+              <div class="preview-camiseta magenta">
+                <svg
+                  viewBox="0 0 120 120"
+                  role="img"
+                  aria-label="Camiseta demonstrativa magenta"
+                >
+                  <path
+                    d="m39 15 14-7h14l14 7 21 13-12 20-10-6v67H40V42l-10 6-12-20z"
+                    fill="#c8124d"
+                    stroke="#1c1845"
+                    stroke-width="3"
+                    stroke-linejoin="round"
+                  />
+                  <circle
+                    cx="60"
+                    cy="55"
+                    r="13"
+                    fill="none"
+                    stroke="#f7b731"
+                    stroke-width="3"
+                  />
+                  <text
+                    x="60"
+                    y="59"
+                    text-anchor="middle"
+                    fill="#fff"
+                    font-family="Arial,sans-serif"
+                    font-size="5"
+                    font-weight="700"
+                  >
+                    CEFISMA
+                  </text>
+                </svg>
+              </div>
+              <h3>Blusa CEFISMA</h3>
+              <p class="preco">Consulte na loja</p>
+              <a class="btn btn-primario btn-pequeno" href="#blusas"
+                >Ver produto</a
+              >
+            </li>
+            <li class="produto">
+              <div class="preview-camiseta azul">
+                <svg
+                  viewBox="0 0 120 120"
+                  role="img"
+                  aria-label="Camiseta demonstrativa azul"
+                >
+                  <path
+                    d="m39 15 14-7h14l14 7 21 13-12 20-10-6v67H40V42l-10 6-12-20z"
+                    fill="#2a44d8"
+                    stroke="#1c1845"
+                    stroke-width="3"
+                    stroke-linejoin="round"
+                  />
+                  <circle
+                    cx="60"
+                    cy="55"
+                    r="13"
+                    fill="none"
+                    stroke="#f7b731"
+                    stroke-width="3"
+                  />
+                  <text
+                    x="60"
+                    y="59"
+                    text-anchor="middle"
+                    fill="#fff"
+                    font-family="Arial,sans-serif"
+                    font-size="5"
+                    font-weight="700"
+                  >
+                    CEFISMA
+                  </text>
+                </svg>
+              </div>
+              <h3>Blusa IFUSP</h3>
+              <p class="preco">Consulte na loja</p>
+              <a class="btn btn-linha btn-pequeno" href="#blusas"
+                >Ver produto</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="secao" id="participe">
+        <div class="wrap">
+          <h2>Participe</h2>
+          <ul class="linhas">
+            <li>
+              <div>
+                <h3>Traga sua ideia</h3>
+                <p>Participe das conversas e atividades do Centro Acadêmico.</p>
+              </div>
+              <a class="btn btn-linha btn-pequeno" href="#participe"
+                >Saiba mais</a
+              >
+            </li>
+            <li>
+              <div>
+                <h3>Publique no Supernova</h3>
+                <p>Envie textos, ilustrações e outras produções.</p>
+              </div>
+              <a class="btn btn-linha btn-pequeno" href="#supernova"
+                >Enviar contribuição</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="rodape preview-fim">
+      <div class="wrap">
+        <div>
+          <h2>
+            <a
+              class="marca"
+              href="#/inicio"
+              aria-label="cefisma, página inicial"
+            >
+              <span class="marca-texto"
+                >ce<span class="f-funcao">f</span>isma</span
+              >
+            </a>
+          </h2>
+          <p>Centro Acadêmico do Instituto de Física da USP.</p>
+          <a href="mailto:cefisma@cefisma.org.br">cefisma@cefisma.org.br</a>
+        </div>
+        <div>
+          <h2>Transparência</h2>
+          <ul>
+            <li><a href="#participe">Relatórios</a></li>
+            <li><a href="#participe">Arquivos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Redes sociais</h2>
+          <ul class="redes-sociais">
+            <li>
+              <a
+                href="https://www.instagram.com/cefisma/"
+                aria-label="Instagram do CEFISMA"
+                title="Instagram"
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect
+                    x="3"
+                    y="3"
+                    width="18"
+                    height="18"
+                    rx="5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  /></svg
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://t.me/cefisma"
+                aria-label="Telegram do CEFISMA"
+                title="Telegram"
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M21.7 4.3 18.5 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.5l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.4 3c.9-.3 1.6.2 1.3 1.3Z"
+                  /></svg
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.tiktok.com/@cefisma"
+                aria-label="TikTok do CEFISMA"
+                title="TikTok"
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M19.6 7.2a6.8 6.8 0 0 1-4.2-1.5v8.1a6.3 6.3 0 1 1-5.4-6.2v3.5a2.9 2.9 0 1 0 2 2.7V2h3.4c.3 2.1 1.8 3.7 4.2 4.1v3.5Z"
+                  /></svg
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://x.com/CEFISMA"
+                aria-label="X do CEFISMA"
+                title="X"
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l7.3-8.4L1.8 2h6.5l4.5 6.8L18.9 2Zm-1.1 17.8h1.7L7.3 4H5.5l12.3 15.8Z"
+                  /></svg
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/cefismausp/"
+                aria-label="Facebook do CEFISMA"
+                title="Facebook"
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M13.4 22v-8.9h3l.5-3.5h-3.5V7.4c0-1 .3-1.7 1.8-1.7H17V2.5c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6v2.6h-3v3.5h3V22h3.6Z"
+                  /></svg
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <p class="nota nota-tema">
+          Prévia estática da home · os links internos são demonstrativos
+        </p>
+      </div>
+    </footer>
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>

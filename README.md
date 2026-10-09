@@ -29,6 +29,10 @@ Fluxo de uma requisição: o WordPress escolhe o template (`front-page.php`) →
 | `404.php` | `PaginaController::naoEncontrado` |
 | `woocommerce.php` | `LojaController::loja` |
 
+## Prévia da home
+
+O workflow `.github/workflows/pages-preview.yml` publica uma versão estática e demonstrativa da página inicial em `https://clcmo.github.io/cefisma/` a cada push para `main`. Para ativar a publicação, configure **Settings > Pages > Build and deployment > GitHub Actions** no repositório. O WordPress continua sendo necessário para renderizar a versão dinâmica do tema; a prévia não contém dados reais da loja ou da agenda.
+
 ## Instalação
 
 1. Compacte a pasta `cefisma/` em `.zip` (ou use o arquivo entregue) e envie em Aparência > Temas > Adicionar.
