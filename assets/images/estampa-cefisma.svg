@@ -2,6 +2,6 @@
   <title id="titulo">cefisma</title>
   <desc id="descricao">Logotipo tipográfico cefisma em minúsculas, com o f de função em magenta e itálico.</desc>
   <text x="340" y="145" text-anchor="middle" fill="#1c1845" font-family="Bricolage Grotesque, Arial, sans-serif" font-size="124" font-weight="800" letter-spacing="-3">
-    <tspan>ce</tspan><tspan fill="#c8124d" font-family="Source Serif 4, Georgia, serif" font-size="142" font-style="italic" font-weight="600" dy="-3">f</tspan><tspan>isma</tspan>
+    <tspan>ce</tspan><tspan fill="#c8124d" font-family="Georgia, 'Times New Roman', serif" font-size="142" font-style="italic" font-weight="600" dy="-3">f</tspan><tspan>isma</tspan>
   </text>
 </svg>
