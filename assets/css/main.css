@@ -892,7 +892,7 @@ main:focus {
 }
 .rodape h2 {
   font-size: 1.05rem;
-  margin-bottom: 0.8rem;
+  margin: 1.8rem auto 0.8rem;
   color: #fff;
 }
 .rodape ul {
