@@ -14,7 +14,7 @@ app/
     Api/               EdicaoApiController (REST para o pipeline do boletim)
     Admin/             MetaBoxController (campos no editor)
   Views/               HTML (layouts, partials, components, pages, supernova, loja, admin)
-assets/                css/main.css e js/main.js
+assets/                css por módulos e js/main.js
 ```
 
 Fluxo de uma requisição: o WordPress escolhe o template (`front-page.php`) → ele chama `Theme::dispatch(HomeController::class, 'index')` → o Controller pede dados aos **Models** → entrega arrays prontos à **View**, que só imprime (com escape). Views nunca consultam o banco.
@@ -28,6 +28,10 @@ Fluxo de uma requisição: o WordPress escolhe o template (`front-page.php`) →
 | `index.php`, `archive.php`, `search.php` | `PaginaController::listar` |
 | `404.php` | `PaginaController::naoEncontrado` |
 | `woocommerce.php` | `LojaController::loja` |
+
+## Estilos
+
+`assets/css/main.css` contém a base global do tema. Os módulos `home.css`, `content.css`, `supernova.css`, `edition.css`, `store.css`, `woocommerce.css` e `editorial.css` são carregados conforme a rota WordPress, evitando enviar estilos específicos para páginas que não os utilizam. A versão do tema identifica os assets e renova o cache quando eles mudam.
 
 ## Prévia da home
 

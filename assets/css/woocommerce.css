@@ -1,0 +1,47 @@
+/* Ajustes exclusivos do WooCommerce */
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit {
+  background: var(--magenta);
+  color: #fff;
+  border-radius: 99px;
+  font: 700 1rem var(--f-ui);
+  padding: 0.75rem 1.3rem;
+}
+.woocommerce a.button:hover,
+.woocommerce button.button:hover {
+  background: var(--tinta);
+  color: #fff;
+}
+.woocommerce ul.products li.product .price,
+.woocommerce div.product p.price {
+  color: var(--tinta);
+  font-family: var(--f-ui);
+  font-weight: 700;
+}
+.pos-compra {
+  background: var(--lavanda);
+  border-radius: 22px 22px 4px 22px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+.pos-compra h3 {
+  margin-top: 0;
+}
+.campo-newsletter {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  font: 500 1rem var(--f-ui);
+}
+.campo-newsletter input {
+  margin-top: 0.35rem;
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--magenta);
+}

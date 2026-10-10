@@ -73,6 +73,37 @@ final class Theme
             null
         );
         wp_enqueue_style('cefisma', CEFISMA_URI . '/assets/css/main.css', ['cefisma-fontes'], CEFISMA_VERSION);
+
+        $home = is_front_page();
+        $supernova = is_post_type_archive(Edicao::TIPO) || is_singular(Edicao::TIPO);
+        $woocommerce = function_exists('is_woocommerce') && (is_woocommerce() || is_cart() || is_checkout() || is_account_page());
+        $publicacoes = $home || $supernova || is_home() || (!$woocommerce && (is_singular() || is_archive() || is_search()));
+
+        if ($publicacoes) {
+            wp_enqueue_style('cefisma-content', CEFISMA_URI . '/assets/css/content.css', ['cefisma'], CEFISMA_VERSION);
+        }
+        if ($home || $supernova) {
+            wp_enqueue_style('cefisma-supernova', CEFISMA_URI . '/assets/css/supernova.css', ['cefisma'], CEFISMA_VERSION);
+        }
+        if ($supernova) {
+            wp_enqueue_style('cefisma-edition', CEFISMA_URI . '/assets/css/edition.css', ['cefisma-supernova'], CEFISMA_VERSION);
+        }
+        if ($home) {
+            wp_enqueue_style('cefisma-home', CEFISMA_URI . '/assets/css/home.css', ['cefisma-content', 'cefisma-supernova'], CEFISMA_VERSION);
+        }
+
+        $loja = $home || $supernova || $woocommerce;
+        if ($loja) {
+            wp_enqueue_style('cefisma-store', CEFISMA_URI . '/assets/css/store.css', ['cefisma'], CEFISMA_VERSION);
+        }
+        if ($woocommerce) {
+            wp_enqueue_style('cefisma-woocommerce', CEFISMA_URI . '/assets/css/woocommerce.css', ['cefisma-store'], CEFISMA_VERSION);
+        }
+
+        if (!$home && (!$woocommerce && (is_singular() || is_home() || is_archive() || is_search()) || is_404())) {
+            wp_enqueue_style('cefisma-editorial', CEFISMA_URI . '/assets/css/editorial.css', ['cefisma'], CEFISMA_VERSION);
+        }
+
         wp_enqueue_script('cefisma', CEFISMA_URI . '/assets/js/main.js', [], CEFISMA_VERSION, ['in_footer' => true, 'strategy' => 'defer']);
     }
 }

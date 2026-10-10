@@ -1,0 +1,54 @@
+/* Loja */
+.grade-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.75rem 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.produto {
+  display: flex;
+  flex-direction: column;
+}
+.produto .arte {
+  aspect-ratio: 1;
+  display: block;
+  overflow: hidden;
+  border-radius: 26px 26px 6px 26px;
+  background: var(--lavanda);
+}
+.produto .arte svg,
+.produto .arte img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.produto h3 {
+  margin: 0.8rem 0 0.15rem;
+}
+.produto h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+.produto h3 a:hover {
+  text-decoration: underline;
+}
+.produto .preco {
+  font: 700 1.1rem var(--f-ui);
+  margin-bottom: 0.8rem;
+}
+.produto .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+.banda-escura .produto h3 a {
+  color: #fff;
+}
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 2rem;
+}
+

@@ -1,0 +1,88 @@
+/* Páginas de edição do Supernova */
+.abas {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+}
+.chip {
+  font: 600 0.95rem var(--f-ui);
+  padding: 0.5rem 1rem;
+  border-radius: 99px;
+  border: 2px solid var(--tinta);
+  background: transparent;
+  color: var(--tinta);
+  cursor: pointer;
+  text-decoration: none;
+}
+.chip:hover {
+  background: var(--lavanda);
+  color: var(--tinta);
+}
+.chip[aria-pressed="true"],
+.chip[aria-current="page"] {
+  background: var(--tinta);
+  color: #fff;
+}
+.edicao-destaque {
+  display: grid;
+  grid-template-columns: minmax(200px, 320px) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: start;
+}
+@media (max-width: 760px) {
+  .edicao-destaque {
+    grid-template-columns: minmax(0, 260px);
+  }
+}
+.edicao-destaque .grande svg,
+.edicao-destaque .grande img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 24px 40px -18px rgba(28, 24, 69, 0.6);
+}
+.sumario {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 0;
+  border-left: 4px solid var(--magenta);
+}
+.sumario li {
+  padding: 0.45rem 1rem;
+}
+.sumario a {
+  color: var(--tinta);
+  font: 600 1.05rem var(--f-ui);
+  text-decoration: none;
+}
+.sumario a:hover {
+  text-decoration: underline;
+  color: var(--tinta);
+}
+.painel {
+  background: var(--sol);
+  color: var(--tinta);
+  border-radius: 28px 28px 6px 28px;
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+.painel h2 {
+  margin-bottom: 0.4em;
+}
+.painel .acoes {
+  margin: 0;
+  justify-content: flex-end;
+}
+@media (max-width: 760px) {
+  .painel {
+    grid-template-columns: 1fr;
+  }
+  .painel .acoes {
+    justify-content: flex-start;
+  }
+}

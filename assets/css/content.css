@@ -1,0 +1,89 @@
+/* Agenda e publicações */
+.duas {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+@media (max-width: 860px) {
+  .duas {
+    grid-template-columns: 1fr;
+  }
+}
+.agenda,
+.pubs,
+.linhas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.agenda li {
+  display: grid;
+  grid-template-columns: 4.2rem 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0;
+  border-top: 1px solid var(--linha);
+}
+.agenda time {
+  font: 700 0.9rem/1 var(--f-ui);
+  text-align: center;
+  background: var(--tinta);
+  color: #fff;
+  border-radius: 12px 12px 4px 12px;
+  padding: 0.6rem 0;
+}
+.agenda time b {
+  display: block;
+  font-size: 1.7rem;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+.agenda strong {
+  font-family: var(--f-ui);
+  font-weight: 600;
+  display: block;
+  line-height: 1.3;
+}
+.pubs li {
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--linha);
+}
+.pubs h3 {
+  margin: 0.55rem 0 0.35rem;
+}
+.pubs h3 a {
+  color: var(--tinta);
+  text-decoration: none;
+}
+.pubs h3 a:hover {
+  text-decoration: underline;
+  color: var(--tinta);
+}
+.pubs p {
+  margin: 0 0 0.35rem;
+}
+.pubs small,
+.meta {
+  color: var(--suave);
+  font: 500 0.9rem var(--f-ui);
+}
+.tag {
+  display: inline-block;
+  font: 700 0.8rem/1 var(--f-ui);
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px 6px 2px 6px;
+  background: var(--lavanda);
+  color: var(--tinta);
+  margin-right: 0.35rem;
+}
+.tag-supernova {
+  background: var(--magenta);
+  color: #fff;
+}
+.tag-rd {
+  background: var(--cobalto);
+  color: #fff;
+}
+.tag-eleicao {
+  background: var(--sol);
+}

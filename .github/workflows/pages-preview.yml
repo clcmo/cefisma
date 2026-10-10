@@ -28,7 +28,7 @@ jobs:
         run: |
           mkdir -p _site/assets/css _site/assets/js _site/assets/images
           cp preview/index.html _site/index.html
-          cp assets/css/main.css _site/assets/css/main.css
+          cp assets/css/*.css _site/assets/css/
           cp assets/js/main.js _site/assets/js/main.js
           cp assets/images/estampa-cefisma.svg _site/assets/images/estampa-cefisma.svg
           cp print-cefisma.svg _site/print-cefisma.svg

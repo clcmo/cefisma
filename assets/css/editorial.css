@@ -1,0 +1,39 @@
+/* Conteúdo editorial (páginas, posts, arquivos) */
+.cabecalho-pagina {
+  padding: clamp(2rem, 5vw, 3.5rem) 0 1rem;
+}
+.conteudo {
+  max-width: 68ch;
+  margin-inline: auto;
+}
+.conteudo h2 {
+  margin-top: 1.6em;
+}
+.conteudo img {
+  height: auto;
+  border-radius: 6px;
+}
+.conteudo blockquote {
+  margin: 1.5em 0;
+  padding: 0.25em 1.25em;
+  border-left: 4px solid var(--magenta);
+  font-style: italic;
+}
+.paginacao {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.paginacao .page-numbers {
+  padding: 0.45rem 0.95rem;
+  border-radius: 99px;
+  border: 2px solid var(--tinta);
+  color: var(--tinta);
+  text-decoration: none;
+  font: 600 0.95rem var(--f-ui);
+}
+.paginacao .current {
+  background: var(--tinta);
+  color: #fff;
+}
