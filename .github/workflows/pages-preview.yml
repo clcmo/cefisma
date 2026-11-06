@@ -26,8 +26,11 @@ jobs:
 
       - name: Assemble homepage preview
         run: |
-          mkdir -p _site/assets/css _site/assets/js _site/assets/images
+          mkdir -p _site/assets/css _site/assets/js _site/assets/images _site/quem-somos _site/comunicacao _site/participe
           cp preview/index.html _site/index.html
+          cp preview/quem-somos.html _site/quem-somos/index.html
+          cp preview/comunicacao.html _site/comunicacao/index.html
+          cp preview/participe.html _site/participe/index.html
           cp assets/css/*.css _site/assets/css/
           cp assets/js/main.js _site/assets/js/main.js
           cp assets/images/estampa-cefisma.svg _site/assets/images/estampa-cefisma.svg

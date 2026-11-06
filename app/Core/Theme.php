@@ -29,12 +29,65 @@ final class Theme
     {
         add_action('after_setup_theme', [self::class, 'suportes']);
         add_action('wp_enqueue_scripts', [self::class, 'assets']);
+        add_action('admin_init', [self::class, 'criarPaginasExemplo']);
+        add_action('after_switch_theme', [self::class, 'criarPaginasExemplo']);
 
         foreach (self::MODELS as $model) {
             $model::register();
         }
         foreach (self::CONTROLLERS as $controller) {
             (new $controller())->register();
+        }
+    }
+
+    /** Cria páginas demonstrativas ausentes e associa os templates do tema. */
+    public static function criarPaginasExemplo(): void
+    {
+        if (!current_user_can('manage_options')) {
+            return;
+        }
+
+        $paginas = [
+            [
+                'slug'     => 'quem-somos',
+                'titulo'   => 'Quem somos',
+                'template' => 'page-quem-somos.php',
+            ],
+            [
+                'slug'     => 'comunicacao',
+                'titulo'   => 'Comunicação',
+                'template' => 'page-comunicacao.php',
+            ],
+            [
+                'slug'     => 'participe',
+                'titulo'   => 'Participe',
+                'template' => 'page-participe.php',
+            ],
+        ];
+
+        foreach ($paginas as $pagina) {
+            $existente = get_page_by_path($pagina['slug'], OBJECT, 'page');
+            if ($existente) {
+                $templateAtual = get_page_template_slug($existente->ID);
+                if ($templateAtual === '' || $templateAtual === 'default') {
+                    update_post_meta($existente->ID, '_wp_page_template', $pagina['template']);
+                }
+                continue;
+            }
+
+            $id = wp_insert_post([
+                'post_type'   => 'page',
+                'post_status' => 'publish',
+                'post_title'  => $pagina['titulo'],
+                'post_name'   => $pagina['slug'],
+            ], true);
+
+            if (is_wp_error($id)) {
+                error_log(sprintf('CEFISMA: não foi possível criar a página "%s": %s', $pagina['slug'], $id->get_error_message()));
+                continue;
+            }
+
+            update_post_meta($id, '_wp_page_template', $pagina['template']);
         }
     }
 

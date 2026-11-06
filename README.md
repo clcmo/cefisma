@@ -35,9 +35,9 @@ Fluxo de uma requisição: o WordPress escolhe o template (`front-page.php`) →
 
 `assets/css/main.css` contém a base global do tema. Os módulos `home.css`, `content.css`, `supernova.css`, `edition.css`, `store.css`, `woocommerce.css` e `editorial.css` são carregados conforme a rota WordPress, evitando enviar estilos específicos para páginas que não os utilizam. A versão do tema identifica os assets e renova o cache quando eles mudam.
 
-## Prévia da home
+## Prévia do tema
 
-O workflow `.github/workflows/pages-preview.yml` publica uma versão estática e demonstrativa da página inicial em `https://clcmo.github.io/cefisma/` a cada push para `main`. Para ativar a publicação, configure **Settings > Pages > Build and deployment > GitHub Actions** no repositório. O WordPress continua sendo necessário para renderizar a versão dinâmica do tema; a prévia não contém dados reais da loja ou da agenda.
+O workflow `.github/workflows/pages-preview.yml` publica versões estáticas e demonstrativas da página inicial, de Quem somos, Comunicação e Participe em `https://clcmo.github.io/cefisma/` a cada push para `main`. Para ativar a publicação, configure **Settings > Pages > Build and deployment > GitHub Actions** no repositório. O WordPress continua sendo necessário para renderizar as páginas dinâmicas; a prévia usa conteúdo ilustrativo e não contém dados reais da loja ou da agenda.
 
 ## Instalação
 
@@ -45,9 +45,8 @@ O workflow `.github/workflows/pages-preview.yml` publica uma versão estática e
 2. Ative o tema e vá em Configurações > Links permanentes > Salvar (atualiza as rotas das edições).
 3. Em Aparência > Menus, crie o menu e atribua ao local "Menu principal" (sem menu, o tema usa os itens padrão de `Models/Navegacao.php`). Os itens chamados **Quem somos**, **Comunicação** e **Participe** apontam às páginas próprias; o tema também corrige os destinos desses itens no menu do WordPress.
 4. Instale e ative o WooCommerce. Crie a categoria de produtos com slug `supernova` para o bloco "Apoie o Supernova".
-5. Para publicar a página institucional, crie uma página com slug `quem-somos` e selecione o modelo **Quem somos**. O modelo já inclui um texto de apresentação e história; conteúdo adicional inserido no editor aparece ao final da página.
-6. Para publicar a página de informes, crie uma página com slug `comunicacao` e selecione o modelo **Comunicação**. A página lista automaticamente as publicações da categoria `informes`, com paginação.
-7. Para publicar a página de participação, crie uma página com slug `participe` e selecione o modelo **Participe**. O modelo reúne caminhos para representação discente, contribuições ao Supernova, organização de atividades e os formulários configurados no tema.
+5. Ao ativar o tema ou abrir o painel como administrador, as páginas **Quem somos**, **Comunicação** e **Participe** são criadas automaticamente caso não existam e recebem seus modelos. Páginas existentes não são sobrescritas; se já tiverem um modelo personalizado, ele é preservado.
+6. A página **Comunicação** lista automaticamente as publicações da categoria `informes`, com paginação.
 
 Na página **Comunicação**, publique posts normalmente e atribua a categoria com slug `informes` para que apareçam na lista. Outros posts não entram nesse arquivo.
 
