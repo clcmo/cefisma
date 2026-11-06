@@ -2,6 +2,8 @@
 
 Tema WordPress do Centro Acadêmico do Instituto de Física da USP, com o Boletim Supernova e a loja (WooCommerce) integrados.
 
+O tema requer PHP 7.4 ou superior e WordPress 6.4 ou superior.
+
 ## Arquitetura
 
 ```
@@ -41,10 +43,27 @@ O workflow `.github/workflows/pages-preview.yml` publica uma versão estática e
 
 1. Compacte a pasta `cefisma/` em `.zip` (ou use o arquivo entregue) e envie em Aparência > Temas > Adicionar.
 2. Ative o tema e vá em Configurações > Links permanentes > Salvar (atualiza as rotas das edições).
-3. Em Aparência > Menus, crie o menu e atribua ao local "Menu principal" (sem menu, o tema usa os itens padrão de `Models/Navegacao.php`).
+3. Em Aparência > Menus, crie o menu e atribua ao local "Menu principal" (sem menu, o tema usa os itens padrão de `Models/Navegacao.php`). Os itens chamados **Quem somos**, **Comunicação** e **Participe** apontam às páginas próprias; o tema também corrige os destinos desses itens no menu do WordPress.
 4. Instale e ative o WooCommerce. Crie a categoria de produtos com slug `supernova` para o bloco "Apoie o Supernova".
+5. Para publicar a página institucional, crie uma página com slug `quem-somos` e selecione o modelo **Quem somos**. O modelo já inclui um texto de apresentação e história; conteúdo adicional inserido no editor aparece ao final da página.
+6. Para publicar a página de informes, crie uma página com slug `comunicacao` e selecione o modelo **Comunicação**. A página lista automaticamente as publicações da categoria `informes`, com paginação.
+7. Para publicar a página de participação, crie uma página com slug `participe` e selecione o modelo **Participe**. O modelo reúne caminhos para representação discente, contribuições ao Supernova, organização de atividades e os formulários configurados no tema.
+
+Na página **Comunicação**, publique posts normalmente e atribua a categoria com slug `informes` para que apareçam na lista. Outros posts não entram nesse arquivo.
 
 **Atenção:** o arquivo das edições usa o endereço `/supernova/boletim/`, o mesmo da página atual "Supernova > Boletim". Renomeie o slug da página antiga ou exclua-a, senão haverá conflito de rotas.
+
+## Edições históricas do Supernova
+
+O arquivo `data/supernova-edicoes.json` cataloga as 18 edições do Boletim e as 3 do Folhetim listadas nos arquivos públicos do CEFISMA. Cada edição publicada no novo site mantém o link para a página original; assim, PDFs e textos continuam sendo servidos pela fonte oficial.
+
+Depois de instalar/atualizar o tema e ativá-lo no WordPress, importe ou atualize os registros com WP-CLI, na raiz da instalação WordPress:
+
+```bash
+wp eval-file wp-content/themes/cefisma/scripts/import-supernova-edicoes.php
+```
+
+O importador é idempotente por série e número, publica as edições e atualiza as rotas permanentes. As datas disponíveis nos arquivos são mensais ou semanais, sem dia exato; o catálogo preserva esse rótulo e usa o primeiro dia do mês como data interna do registro. As novas páginas ficam em `/supernova/edicoes/`; os endereços de origem continuam disponíveis para consulta. Confirme o caminho `wp-content/themes/cefisma` se o tema estiver instalado com outro nome.
 
 ## Integração com o Boletim Supernova
 
@@ -101,7 +120,8 @@ add_action('cefisma_newsletter_optin', function (string $email, WC_Order $pedido
 ## Conteúdo no admin
 
 - **Avisos:** faixa de topo, com link e data final opcionais.
-- **Agenda:** eventos com data; substitui os shortcodes `[calendar id=…]`.
+- **Agenda:** em Agenda > Adicionar evento, informe título, data, local e link opcional. Eventos publicados aparecem na grade mensal da página inicial; use as setas para navegar entre os meses.
+- **Contato e redes sociais:** o rodapé exibe o site, e-mail e os perfis de Instagram, X, TikTok, Telegram e Facebook.
 - **Supernova (Edições):** campos de número, PDF, capa e sumário (uma seção por linha: `Título | URL`).
 
 ## Como estender

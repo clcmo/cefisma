@@ -2,7 +2,7 @@
 /**
  * @var array  $canais
  * @var array  $transparencia
- * @var array  $contato   [email, sobre]
+ * @var array  $contato   [email, site, sobre]
  * @var string $whatsapp
  */
 ?>
@@ -11,6 +11,9 @@
     <div>
       <h2>CEFISMA</h2>
       <p><?php echo esc_html($contato['sobre']); ?></p>
+      <?php if (!empty($contato['site'])) : ?>
+        <p><a href="<?php echo esc_url($contato['site']); ?>"><?php echo esc_html((string) wp_parse_url($contato['site'], PHP_URL_HOST)); ?></a></p>
+      <?php endif; ?>
       <p><a href="mailto:<?php echo esc_attr(antispambot($contato['email'])); ?>"><?php echo esc_html(antispambot($contato['email'])); ?></a></p>
     </div>
     <div>

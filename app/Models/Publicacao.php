@@ -30,6 +30,31 @@ final class Publicacao
         return array_map([self::class, 'desdePost'], $consulta->posts);
     }
 
+    public static function paginaDaCategoria(string $slug, int $pagina = 1, int $limite = 10): array
+    {
+        $consulta = new \WP_Query([
+            'post_type'           => 'post',
+            'post_status'         => 'publish',
+            'posts_per_page'      => $limite,
+            'paged'               => max(1, $pagina),
+            'category_name'       => sanitize_title($slug),
+            'ignore_sticky_posts' => true,
+        ]);
+
+        return [
+            'itens' => array_map([self::class, 'desdePost'], $consulta->posts),
+            'paginacao' => $consulta->max_num_pages > 1
+                ? paginate_links([
+                    'type'      => 'plain',
+                    'total'     => $consulta->max_num_pages,
+                    'current'   => max(1, $pagina),
+                    'prev_text' => 'Anterior',
+                    'next_text' => 'Próxima',
+                ])
+                : '',
+        ];
+    }
+
     public static function desdePost(\WP_Post $p): array
     {
         $tags = [];

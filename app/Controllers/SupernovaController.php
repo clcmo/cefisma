@@ -9,18 +9,21 @@ use Cefisma\Models\Participacao;
 use Cefisma\Models\Produto;
 use Cefisma\Models\Publicacao;
 
-/** Arquivo de edições e página de cada edição do Boletim Supernova. */
+/** Arquivos do Boletim e Folhetim Supernova e página de cada edição. */
 final class SupernovaController extends Controller
 {
     public function arquivo(): void
     {
-        $edicoes = Edicao::todas();
+        $serie = get_query_var('cefisma_serie') === 'folhetim' ? 'folhetim' : 'boletim';
+        $edicoes = Edicao::todas(-1, 1, $serie);
         $this->render('supernova/arquivo', [
             'destaque'   => $edicoes[0] ?? null,
             'edicoes'    => $edicoes,
+            'serie'      => $serie,
             'mediacast'  => Publicacao::porCategoria('mediacast', 3),
             'apoie'      => Produto::porCategoria(Produto::CATEGORIA_SUPERNOVA, 4),
             'url_loja'   => Produto::urlLoja(),
+            'url_arquivo' => (string) get_post_type_archive_link(Edicao::TIPO),
             'url_envio'  => Participacao::urlEnvioSupernova(),
         ]);
     }

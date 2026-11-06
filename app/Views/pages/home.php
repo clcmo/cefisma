@@ -5,6 +5,7 @@
  * @var array|null $edicao      edição mais recente
  * @var array      $edicoes
  * @var array      $eventos
+ * @var array      $calendario
  * @var array      $publicacoes
  * @var array      $produtos
  * @var array      $participe
@@ -51,9 +52,54 @@ $posicoes = [[1, 215], [2, 320], [3, 40], [4, 150], [2, 100]];
 </section>
 
 <section class="secao" aria-labelledby="h-agenda">
+  <div class="wrap calendario" id="agenda">
+    <div class="calendario-cabecalho">
+      <h2 id="h-calendario">Calendário de eventos</h2>
+      <nav class="calendario-navegacao" aria-label="Navegar pelos meses do calendário">
+        <a href="<?php echo esc_url(add_query_arg('mes', $calendario['mes_anterior'], home_url('/')) . '#agenda'); ?>" aria-label="Mês anterior">‹</a>
+        <h3><?php echo esc_html($calendario['titulo']); ?></h3>
+        <a href="<?php echo esc_url(add_query_arg('mes', $calendario['mes_seguinte'], home_url('/')) . '#agenda'); ?>" aria-label="Próximo mês">›</a>
+      </nav>
+    </div>
+    <table class="calendario-tabela" aria-labelledby="h-calendario">
+      <thead>
+        <tr>
+          <?php foreach ($calendario['dias_semana'] as $diaSemana) : ?>
+            <th scope="col"><?php echo esc_html($diaSemana); ?></th>
+          <?php endforeach; ?>
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach ($calendario['semanas'] as $semana) : ?>
+          <tr>
+            <?php foreach ($semana as $dia) : ?>
+              <td<?php echo $dia && $dia['hoje'] ? ' class="hoje"' : ''; ?>>
+                <?php if ($dia) : ?>
+                  <time datetime="<?php echo esc_attr($dia['data']); ?>"<?php echo $dia['hoje'] ? ' aria-current="date"' : ''; ?>><?php echo esc_html((string) $dia['dia']); ?></time>
+                  <?php if ($dia['eventos']) : ?>
+                    <ul>
+                      <?php foreach ($dia['eventos'] as $evento) : ?>
+                        <li>
+                          <?php if ($evento['link'] !== '') : ?>
+                            <a href="<?php echo esc_url($evento['link']); ?>"><?php echo esc_html($evento['titulo']); ?></a>
+                          <?php else : ?>
+                            <?php echo esc_html($evento['titulo']); ?>
+                          <?php endif; ?>
+                        </li>
+                      <?php endforeach; ?>
+                    </ul>
+                  <?php endif; ?>
+                <?php endif; ?>
+              </td>
+            <?php endforeach; ?>
+          </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+  </div>
   <div class="wrap duas">
     <div>
-      <h2 id="h-agenda">Agenda</h2>
+      <h2 id="h-agenda">Próximos eventos</h2>
       <?php if ($eventos) : ?>
         <ul class="agenda">
           <?php foreach ($eventos as $e) : ?>

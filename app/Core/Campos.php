@@ -20,6 +20,9 @@ final class Campos
             case 'date':
                 $v = sanitize_text_field((string) $valor);
                 return preg_match('/^\d{4}-\d{2}-\d{2}$/', $v) ? $v : '';
+            case 'serie':
+                $v = sanitize_key((string) $valor);
+                return in_array($v, ['boletim', 'folhetim'], true) ? $v : 'boletim';
             case 'linhas': // lista de {titulo, url}
                 return self::linhas($valor);
             default:

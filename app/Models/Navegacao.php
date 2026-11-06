@@ -14,13 +14,13 @@ final class Navegacao
             ['rotulo' => 'Início',      'url' => home_url('/'),                  'classe' => ''],
             ['rotulo' => 'Quem somos',  'url' => home_url('/quem-somos/'),       'classe' => ''],
             ['rotulo' => 'Supernova',   'url' => (string) get_post_type_archive_link(Edicao::TIPO) ?: home_url('/supernova/'), 'classe' => ''],
-            ['rotulo' => 'Comunicação', 'url' => home_url('/category/rd/'),      'classe' => ''],
-            ['rotulo' => 'Participe',   'url' => home_url('/formularios/'),      'classe' => ''],
+            ['rotulo' => 'Comunicação', 'url' => home_url('/comunicacao/'),      'classe' => ''],
+            ['rotulo' => 'Participe',   'url' => home_url('/participe/'),        'classe' => ''],
             ['rotulo' => 'Loja',        'url' => Produto::urlLoja(),             'classe' => 'menu-loja'],
         ];
         foreach ($itens as &$i) {
             $caminho = trailingslashit((string) wp_parse_url($i['url'], PHP_URL_PATH));
-            $i['atual'] = $caminho === '/' ? $atual === '/' : str_starts_with($atual, $caminho);
+            $i['atual'] = $caminho === '/' ? $atual === '/' : strpos($atual, $caminho) === 0;
         }
         return $itens;
     }
@@ -50,6 +50,7 @@ final class Navegacao
     {
         return apply_filters('cefisma_contato', [
             'email' => 'cefisma@cefisma.org.br',
+            'site'  => 'https://cefisma.com.br/',
             'sobre' => 'Centro Acadêmico do Instituto de Física da USP.',
         ]);
     }

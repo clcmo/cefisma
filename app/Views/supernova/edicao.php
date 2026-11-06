@@ -12,7 +12,7 @@
  */
 ?>
 <div class="wrap cabecalho-pagina">
-  <p class="meta"><a href="<?php echo esc_url($url_arquivo); ?>">Todas as edições do Supernova</a></p>
+  <p class="meta"><a href="<?php echo esc_url($edicao['serie'] === 'folhetim' ? home_url('/supernova/folhetim/') : $url_arquivo); ?>">Todas as edições do <?php echo $edicao['serie'] === 'folhetim' ? 'Folhetim' : 'Boletim'; ?> Supernova</a></p>
 </div>
 <section class="secao" style="padding-top:0">
   <div class="wrap">

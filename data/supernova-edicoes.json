@@ -1,0 +1,198 @@
+[
+  {
+    "serie": "boletim",
+    "numero": 1,
+    "titulo": "Boletim Supernova nº 1 – Fevereiro de 2024",
+    "slug": "boletim1",
+    "data": "2024-02-01",
+    "data_publicacao": "Fevereiro de 2024",
+    "origem_url": "https://cefisma.com.br/supernova/boletim/boletim1/"
+  },
+  {
+    "serie": "boletim",
+    "numero": 2,
+    "titulo": "Boletim Supernova nº 2 – Junho de 2024",
+    "slug": "boletim2",
+    "data": "2024-06-01",
+    "data_publicacao": "Junho de 2024",
+    "origem_url": "https://cefisma.com.br/supernova/boletim/boletim2/"
+  },
+  {
+    "serie": "boletim",
+    "numero": 3,
+    "titulo": "Boletim Supernova nº 3 – Junho de 2024",
+    "slug": "boletim3",
+    "data": "2024-06-01",
+    "data_publicacao": "Junho de 2024",
+    "origem_url": "https://cefisma.com.br/supernova/boletim/boletim3/"
+  },
+  {
+    "serie": "boletim",
+    "numero": 4,
+    "titulo": "Boletim Supernova nº 4 – Fevereiro de 2025",
+    "slug": "boletim4",
+    "data": "2025-02-01",
+    "data_publicacao": "Fevereiro de 2025",
+    "origem_url": "https://cefisma.com.br/supernova/boletim/boletim4/"
+  },
+  {
+    "serie": "boletim",
+    "numero": 5,
+    "titulo": "Boletim Supernova nº 5 – Junho de 2025",
+    "slug": "boletim5",
+    "data": "2025-06-01",
+    "data_publicacao": "Junho de 2025",
+    "origem_url": "https://cefisma.com.br/supernova/boletim/boletim5/"
+  },
+  {
+    "serie": "boletim",
+    "numero": 6,
+    "titulo": "Boletim Supernova nº 6 – Julho de 2025",
+    "slug": "boletim6",
+    "data": "2025-07-01",
+    "data_publicacao": "Julho de 2025",
+    "origem_url": "https://cefisma.com.br/supernova/boletim/boletim6/"
+  },
+  {
+    "serie": "boletim",
+    "numero": 7,
+    "titulo": "Boletim Supernova nº 7 – Agosto de 2025",
+    "slug": "boletim7",
+    "data": "2025-08-01",
+    "data_publicacao": "Agosto de 2025",
+    "origem_url": "https://cefisma.com.br/supernova/boletim/boletim7/"
+  },
+  {
+    "serie": "boletim",
+    "numero": 8,
+    "titulo": "Boletim Supernova nº 8 – Setembro de 2025",
+    "slug": "boletim8",
+    "data": "2025-09-01",
+    "data_publicacao": "Setembro de 2025",
+    "origem_url": "https://cefisma.com.br/supernova/boletim/boletim8/"
+  },
+  {
+    "serie": "boletim",
+    "numero": 9,
+    "titulo": "Boletim Supernova nº 9 – Outubro de 2025",
+    "slug": "boletim9",
+    "data": "2025-10-01",
+    "data_publicacao": "Outubro de 2025",
+    "origem_url": "https://cefisma.com.br/supernova/boletim/boletim9/"
+  },
+  {
+    "serie": "boletim",
+    "numero": 10,
+    "titulo": "Boletim Supernova nº 10 – Novembro de 2025",
+    "slug": "boletim10",
+    "data": "2025-11-01",
+    "data_publicacao": "Novembro de 2025",
+    "origem_url": "https://cefisma.com.br/supernova/boletim/boletim10/"
+  },
+  {
+    "serie": "boletim",
+    "numero": 11,
+    "titulo": "Boletim Supernova nº 11 – Fevereiro de 2026",
+    "slug": "boletim11",
+    "data": "2026-02-01",
+    "data_publicacao": "Fevereiro de 2026",
+    "origem_url": "https://cefisma.com.br/supernova/boletim/boletim11/"
+  },
+  {
+    "serie": "boletim",
+    "numero": 12,
+    "titulo": "Boletim Supernova nº 12 – Março de 2026",
+    "slug": "boletim12",
+    "data": "2026-03-01",
+    "data_publicacao": "Março de 2026",
+    "pdf_url": "https://cefisma.com.br/wp-content/uploads/2026/05/SUPERNOVA_B12.pdf",
+    "origem_url": "https://cefisma.com.br/supernova/boletim/boletim12/"
+  },
+  {
+    "serie": "boletim",
+    "numero": 13,
+    "titulo": "Boletim Supernova nº 13 – Abril de 2026",
+    "slug": "boletim13",
+    "data": "2026-04-01",
+    "data_publicacao": "Abril de 2026",
+    "pdf_url": "https://cefisma.com.br/wp-content/uploads/2026/05/SUPERNOVA_B13.pdf",
+    "origem_url": "https://cefisma.com.br/supernova/boletim/boletim13/"
+  },
+  {
+    "serie": "boletim",
+    "numero": 14,
+    "titulo": "Boletim Supernova nº 14 – Maio de 2026",
+    "slug": "boletim14",
+    "data": "2026-05-01",
+    "data_publicacao": "Maio de 2026",
+    "pdf_url": "https://cefisma.com.br/wp-content/uploads/2026/05/SUPERNOVA_B14.pdf",
+    "origem_url": "https://cefisma.com.br/supernova/boletim/boletim14/"
+  },
+  {
+    "serie": "boletim",
+    "numero": 15,
+    "titulo": "Boletim Supernova nº 15 – Junho de 2026",
+    "slug": "boletim15",
+    "data": "2026-06-01",
+    "data_publicacao": "Junho de 2026",
+    "pdf_url": "https://cefisma.com.br/wp-content/uploads/2026/06/SUPERNOVA_B15.pdf",
+    "origem_url": "https://cefisma.com.br/supernova/boletim/boletim15/"
+  },
+  {
+    "serie": "boletim",
+    "numero": 16,
+    "titulo": "Boletim Supernova nº 16 – Agosto de 2026",
+    "slug": "boletim16",
+    "data": "2026-08-01",
+    "data_publicacao": "Agosto de 2026",
+    "pdf_url": "https://cefisma.com.br/wp-content/uploads/2026/08/SUPERNOVA_B16.pdf",
+    "origem_url": "https://cefisma.com.br/supernova/boletim/boletim16/"
+  },
+  {
+    "serie": "boletim",
+    "numero": 17,
+    "titulo": "Boletim Supernova nº 17 – Setembro de 2026",
+    "slug": "boletim17",
+    "data": "2026-09-01",
+    "data_publicacao": "Setembro de 2026",
+    "pdf_url": "https://cefisma.com.br/wp-content/uploads/2026/10/SUPERNOVA_B17.pdf",
+    "origem_url": "https://cefisma.com.br/supernova/boletim/boletim17/"
+  },
+  {
+    "serie": "boletim",
+    "numero": 18,
+    "titulo": "Boletim Supernova nº 18 – Outubro de 2026",
+    "slug": "boletim18",
+    "data": "2026-10-01",
+    "data_publicacao": "Outubro de 2026",
+    "pdf_url": "https://cefisma.com.br/wp-content/uploads/2026/10/SUPERNOVA_B18.pdf",
+    "origem_url": "https://cefisma.com.br/supernova/boletim/boletim18/"
+  },
+  {
+    "serie": "folhetim",
+    "numero": 1,
+    "titulo": "Folhetim Supernova #1 – 1ª semana de Maio de 2026",
+    "slug": "folhetim1",
+    "data": "2026-05-01",
+    "data_publicacao": "1ª semana de Maio de 2026",
+    "origem_url": "https://cefisma.com.br/supernova/folhetim/folhetim1/"
+  },
+  {
+    "serie": "folhetim",
+    "numero": 2,
+    "titulo": "Folhetim Supernova #2 – 2ª semana de Maio de 2026",
+    "slug": "folhetim2",
+    "data": "2026-05-01",
+    "data_publicacao": "2ª semana de Maio de 2026",
+    "origem_url": "https://cefisma.com.br/supernova/folhetim/folhetim2/"
+  },
+  {
+    "serie": "folhetim",
+    "numero": 3,
+    "titulo": "Folhetim Supernova #3 – 4ª semana de Maio de 2026",
+    "slug": "folhetim3",
+    "data": "2026-05-01",
+    "data_publicacao": "4ª semana de Maio de 2026",
+    "origem_url": "https://cefisma.com.br/supernova/folhetim/folhetim3/"
+  }
+]

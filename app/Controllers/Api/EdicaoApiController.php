@@ -7,7 +7,7 @@ use Cefisma\Core\Controller;
 use Cefisma\Models\Edicao;
 
 /**
- * API usada pelo pipeline do boletim (LaTeX -> GitHub Actions -> site).
+ * API usada pelo pipeline das edições Supernova (LaTeX -> GitHub Actions -> site).
  *
  *   POST /wp-json/cefisma/v1/edicoes          cria/atualiza a edição pelo número (autenticado)
  *   GET  /wp-json/cefisma/v1/edicoes/ultima   devolve a edição mais recente (público)
@@ -31,11 +31,15 @@ final class EdicaoApiController extends Controller
             'permission_callback' => static fn() => current_user_can('publish_posts'),
             'args'                => [
                 'numero'   => ['type' => 'integer', 'required' => true, 'minimum' => 1],
+                'serie'    => ['type' => 'string', 'enum' => ['boletim', 'folhetim']],
                 'titulo'   => ['type' => 'string'],
                 'resumo'   => ['type' => 'string'],
                 'data'     => ['type' => 'string'],
+                'data_publicacao' => ['type' => 'string'],
+                'slug'     => ['type' => 'string'],
                 'pdf_url'  => ['type' => 'string', 'format' => 'uri'],
                 'capa_url' => ['type' => 'string', 'format' => 'uri'],
+                'origem_url' => ['type' => 'string', 'format' => 'uri'],
                 'sumario'  => [
                     'type'  => 'array',
                     'items' => ['type' => 'object', 'properties' => [

@@ -21,6 +21,9 @@ $tag = in_array($titulo_tag ?? 'h2', ['h1', 'h2'], true) ? $titulo_tag : 'h2';
       <?php if ($edicao['pdf'] !== '') : ?>
         <a class="btn <?php echo !empty($link_titulo) ? 'btn-linha' : 'btn-primario'; ?>" href="<?php echo esc_url($edicao['pdf']); ?>">Ler o PDF</a>
       <?php endif; ?>
+      <?php if (!empty($edicao['origem'])) : ?>
+        <a class="btn <?php echo !empty($link_titulo) || $edicao['pdf'] !== '' ? 'btn-linha' : 'btn-primario'; ?>" href="<?php echo esc_url($edicao['origem']); ?>">Ler edição original</a>
+      <?php endif; ?>
     </div>
     <?php if ($edicao['sumario']) : ?>
       <h3 class="sumario-titulo">Nesta edição</h3>

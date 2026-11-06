@@ -3,9 +3,9 @@ Theme Name: CEFISMA
 Theme URI: https://cefisma.com.br
 Author: CEFISMA
 Description: Tema do Centro Acadêmico do Instituto de Física da USP, com integração entre o Boletim Supernova e a loja (WooCommerce). Arquitetura MVC: Models (dados), Views (HTML) e Controllers (orquestração).
-Version: 0.1.1
+Version: 0.1.7
 Requires at least: 6.4
-Requires PHP: 8.0
+Requires PHP: 7.4
 License: GPL-2.0-or-later
 Text Domain: cefisma
 */

@@ -1,4 +1,84 @@
 /* Agenda e publicações */
+.calendario {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+.calendario-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.calendario-cabecalho h2,
+.calendario-navegacao h3 {
+  margin: 0;
+}
+.calendario-navegacao {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.calendario-navegacao h3 {
+  min-width: 9rem;
+  text-align: center;
+  font: 700 1rem var(--f-ui);
+  text-transform: capitalize;
+}
+.calendario-navegacao a {
+  display: grid;
+  width: 2rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid var(--linha);
+  border-radius: 50%;
+  color: var(--tinta);
+  font: 700 1.4rem/1 var(--f-ui);
+  text-decoration: none;
+}
+.calendario-navegacao a:hover,
+.calendario-navegacao a:focus-visible {
+  background: var(--tinta);
+  color: #fff;
+}
+.calendario-tabela {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0.35rem;
+}
+.calendario-tabela th {
+  padding: 0.35rem;
+  color: var(--suave);
+  font: 600 0.8rem var(--f-ui);
+}
+.calendario-tabela td {
+  height: 6rem;
+  padding: 0.5rem;
+  vertical-align: top;
+  background: var(--papel);
+  border: 1px solid var(--linha);
+  border-radius: 8px;
+}
+.calendario-tabela td.hoje {
+  border-color: var(--cobalto);
+  box-shadow: inset 0 0 0 1px var(--cobalto);
+}
+.calendario-tabela td time {
+  font: 700 0.9rem var(--f-ui);
+}
+.calendario-tabela ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.35rem 0 0;
+}
+.calendario-tabela li {
+  margin-top: 0.2rem;
+  font: 500 0.75rem/1.3 var(--f-ui);
+  overflow-wrap: anywhere;
+}
+.calendario-tabela li a {
+  color: var(--cobalto);
+}
 .duas {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
@@ -7,6 +87,27 @@
 @media (max-width: 860px) {
   .duas {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .calendario-cabecalho {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .calendario-tabela {
+    border-spacing: 0.15rem;
+  }
+  .calendario-tabela th {
+    padding: 0.2rem 0;
+    font-size: 0.7rem;
+  }
+  .calendario-tabela td {
+    height: 4.5rem;
+    padding: 0.25rem;
+    border-radius: 4px;
+  }
+  .calendario-tabela li {
+    font-size: 0.65rem;
   }
 }
 .agenda,

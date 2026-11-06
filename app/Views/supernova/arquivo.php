@@ -4,18 +4,24 @@
  *
  * @var array|null $destaque
  * @var array      $edicoes
+ * @var string     $serie
  * @var array      $mediacast
  * @var array      $apoie
+ * @var string     $url_arquivo
  * @var string     $url_loja
  * @var string     $url_envio
  */
 ?>
 <div class="wrap cabecalho-pagina">
-  <h1>Supernova</h1>
-  <p class="lede">Boletim e folhetim dos estudantes do Instituto de Física da USP.</p>
+  <h1><?php echo $serie === 'folhetim' ? 'Folhetim Supernova' : 'Boletim Supernova'; ?></h1>
+  <?php if ($serie === 'folhetim') : ?>
+    <p class="lede">Criado durante a greve estudantil de 2026, o Folhetim Supernova reúne informações e comunicados para a comunidade IFUSPiana.</p>
+  <?php else : ?>
+    <p class="lede">Boletim mensal da comunidade IFUSPiana, com textos, artes, repasses, problemas e avisos.</p>
+  <?php endif; ?>
   <div class="abas">
-    <span class="chip" aria-current="page">Boletim</span>
-    <a class="chip" href="<?php echo esc_url(home_url('/supernova/folhetim/')); ?>">Folhetim</a>
+    <a class="chip" href="<?php echo esc_url($url_arquivo); ?>"<?php echo $serie === 'boletim' ? ' aria-current="page"' : ''; ?>>Boletim</a>
+    <a class="chip" href="<?php echo esc_url(home_url('/supernova/folhetim/')); ?>"<?php echo $serie === 'folhetim' ? ' aria-current="page"' : ''; ?>>Folhetim</a>
   </div>
 </div>
 
@@ -45,7 +51,7 @@
 <section class="secao"><div class="wrap"><p>As edições aparecerão aqui assim que forem publicadas.</p></div></section>
 <?php endif; ?>
 
-<?php if ($mediacast) : ?>
+<?php if ($serie === 'boletim' && $mediacast) : ?>
 <section class="secao banda-lavanda" aria-labelledby="h-mediacast">
   <div class="wrap">
     <div class="cab-secao">
