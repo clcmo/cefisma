@@ -11,7 +11,6 @@ final class Produto
 {
     /** Slug da categoria de produtos ligados ao Supernova (zine impressa, PDFs, etc.). */
     public const CATEGORIA_SUPERNOVA = 'supernova';
-    public const CATEGORIA_BLUSAS = 'camiseta';
 
     public static function ativa(): bool
     {
@@ -23,26 +22,22 @@ final class Produto
         if (!self::ativa()) {
             return [];
         }
-        $produtos = wc_get_products(['status' => 'publish', 'featured' => true, 'limit' => $limite]);
-        if (count($produtos) < $limite) {
-            $produtos = wc_get_products(['status' => 'publish', 'limit' => $limite, 'orderby' => 'date', 'order' => 'DESC']);
-        }
-        return array_map([self::class, 'dados'], $produtos);
-    }
-
-    public static function blusas(int $limite = 4): array
-    {
-        if (!self::ativa()) {
-            return [];
-        }
-        return array_map([self::class, 'dados'], wc_get_products([
+        $produtos = wc_get_products([
             'status'       => 'publish',
             'stock_status' => 'instock',
-            'category'     => [self::CATEGORIA_BLUSAS],
+            'featured'     => true,
             'limit'        => $limite,
-            'orderby'      => 'date',
-            'order'        => 'DESC',
-        ]));
+        ]);
+        if (count($produtos) < $limite) {
+            $produtos = wc_get_products([
+                'status'       => 'publish',
+                'stock_status' => 'instock',
+                'limit'        => $limite,
+                'orderby'      => 'date',
+                'order'        => 'DESC',
+            ]);
+        }
+        return array_map([self::class, 'dados'], $produtos);
     }
 
     public static function porCategoria(string $slug, int $limite = 4): array

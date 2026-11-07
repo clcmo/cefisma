@@ -156,7 +156,7 @@ $posicoes = [[1, 215], [2, 320], [3, 40], [4, 150], [2, 100]];
   <div class="wrap">
     <div class="cab-secao">
       <div class="vitrine-blusas-copy">
-        <h2 id="h-loja">Camisetas do CEFISMA</h2>
+        <h2 id="h-loja">Produtos do CEFISMA</h2>
         <p>Vista as cores do Centro Acadêmico e leve essa história com você.</p>
         <a class="btn btn-primario btn-pequeno" href="<?php echo esc_url($url_loja); ?>">Ver a loja completa</a>
       </div>

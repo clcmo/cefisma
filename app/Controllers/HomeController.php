@@ -31,7 +31,7 @@ final class HomeController extends Controller
             'calendario'   => Evento::calendario($ano, $mes),
             'eventos'      => Evento::proximos(3),
             'publicacoes'  => Publicacao::recentes(3),
-            'produtos'     => Produto::blusas(4),
+            'produtos'     => Produto::destaques(4),
             'participe'    => Participacao::itens(),
             'url_loja'     => Produto::urlLoja(),
             'url_arquivo'  => (string) get_post_type_archive_link(Edicao::TIPO),
