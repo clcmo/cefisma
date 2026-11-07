@@ -37,20 +37,20 @@ Fluxo de uma requisição: o WordPress escolhe o template (`front-page.php`) →
 
 ## Prévia do tema
 
-O workflow `.github/workflows/pages-preview.yml` publica versões estáticas e demonstrativas da página inicial, de Quem somos, Comunicação e Participe em `https://clcmo.github.io/cefisma/` a cada push para `main`. Para ativar a publicação, configure **Settings > Pages > Build and deployment > GitHub Actions** no repositório. O WordPress continua sendo necessário para renderizar as páginas dinâmicas; a prévia usa conteúdo ilustrativo e não contém dados reais da loja ou da agenda.
+O workflow `.github/workflows/pages-preview.yml` publica versões estáticas e demonstrativas da página inicial, de Quem somos, Supernova, Comunicação e Participe em `https://clcmo.github.io/cefisma/` a cada push para `main`. Para ativar a publicação, configure **Settings > Pages > Build and deployment > GitHub Actions** no repositório. O WordPress continua sendo necessário para renderizar as páginas dinâmicas; a prévia usa conteúdo ilustrativo e não contém dados reais da loja ou da agenda.
 
 ## Instalação
 
 1. Compacte a pasta `cefisma/` em `.zip` (ou use o arquivo entregue) e envie em Aparência > Temas > Adicionar.
-2. Ative o tema e vá em Configurações > Links permanentes > Salvar (atualiza as rotas das edições).
+2. Ative o tema. Ele configura os posts como `/%category%/%postname%/`, mantém páginas em `/%postname%/` e atualiza as regras de URL.
 3. Em Aparência > Menus, crie o menu e atribua ao local "Menu principal" (sem menu, o tema usa os itens padrão de `Models/Navegacao.php`). Os itens chamados **Quem somos**, **Comunicação** e **Participe** apontam às páginas próprias; o tema também corrige os destinos desses itens no menu do WordPress.
 4. Instale e ative o WooCommerce. Crie a categoria de produtos com slug `supernova` para o bloco "Apoie o Supernova".
-5. Ao ativar o tema ou abrir o painel como administrador, as páginas **Quem somos**, **Comunicação** e **Participe** são criadas automaticamente caso não existam e recebem seus modelos. Páginas existentes não são sobrescritas; se já tiverem um modelo personalizado, ele é preservado.
+5. Ao ativar o tema ou abrir o painel como administrador, as páginas **Quem somos**, **Supernova**, **Comunicação** e **Participe** são criadas automaticamente caso não existam e recebem seus modelos. A página Supernova apresenta separadamente o Boletim e o Folhetim, com as três edições mais recentes de cada série. Páginas existentes não são sobrescritas; se já tiverem um modelo personalizado, ele é preservado.
 6. A página **Comunicação** lista automaticamente as publicações da categoria `informes`, com paginação.
 
 Na página **Comunicação**, publique posts normalmente e atribua a categoria com slug `informes` para que apareçam na lista. Outros posts não entram nesse arquivo.
 
-**Atenção:** o arquivo das edições usa o endereço `/supernova/boletim/`, o mesmo da página atual "Supernova > Boletim". Renomeie o slug da página antiga ou exclua-a, senão haverá conflito de rotas.
+**Atenção:** o arquivo das edições usa o endereço `/supernova/boletim/`. Se já existir uma página com esse endereço, altere o slug dela para evitar conflito de rotas.
 
 ## Edições históricas do Supernova
 

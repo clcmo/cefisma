@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Leia o Boletim e o Folhetim Supernova, publicações dos estudantes do IFUSP." />
+    <title>Supernova | CEFISMA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/content.css" />
+    <link rel="stylesheet" href="../assets/css/supernova.css" />
+    <link rel="stylesheet" href="../assets/css/edition.css" />
+    <style>
+      .preview-note {
+        padding: .45rem 0;
+        background: var(--sol);
+        color: var(--tinta);
+        text-align: center;
+        font: 700 .85rem var(--f-ui);
+      }
+      .preview-supernova-capa {
+        display: grid;
+        aspect-ratio: 3 / 4;
+        place-items: center;
+        overflow: hidden;
+        border-radius: 4px;
+        color: #fff;
+        background: radial-gradient(circle at 50% 42%, var(--sol) 0 3%, transparent 3.5% 22%, var(--magenta) 22.5% 24%, transparent 24.5% 42%, var(--cobalto) 42.5% 43%, transparent 43.5%), var(--tinta);
+        font: 800 2.2rem/1 var(--f-ui);
+      }
+      .supernova-serie-folhetim .preview-supernova-capa {
+        background: radial-gradient(circle at 50% 42%, #fff 0 3%, transparent 3.5% 22%, var(--cobalto) 22.5% 24%, transparent 24.5% 42%, var(--magenta) 42.5% 43%, transparent 43.5%), var(--lavanda);
+        color: var(--tinta);
+      }
+    </style>
+  </head>
+  <body>
+    <p class="preview-note">Prévia visual · conteúdo demonstrativo</p>
+    <header class="topo">
+      <div class="wrap">
+        <a class="marca" href="../" aria-label="CEFISMA, página inicial"><span class="marca-texto">ce<span class="f-funcao">f</span>isma</span></a>
+        <nav class="nav-principal" aria-label="Navegação principal">
+          <ul id="menu" class="menu">
+            <li><a href="../">Início</a></li>
+            <li><a href="../quem-somos/">Quem somos</a></li>
+            <li><a aria-current="page" href="./">Supernova</a></li>
+            <li><a href="../comunicacao/">Comunicação</a></li>
+            <li><a href="../participe/">Participe</a></li>
+          </ul>
+        </nav>
+        <div class="topo-acoes"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button></div>
+      </div>
+    </header>
+
+    <main id="conteudo" class="secao supernova-inicio">
+      <div class="wrap">
+        <header class="cabecalho-pagina">
+          <span class="tag tag-supernova">Publicações estudantis</span>
+          <h1>Supernova</h1>
+          <p class="lede">Textos, artes, notícias e informações produzidos pela comunidade do Instituto de Física da USP.</p>
+        </header>
+
+        <div class="supernova-series">
+          <article class="supernova-serie">
+            <div class="supernova-serie-cabecalho">
+              <span class="tag tag-supernova">Publicação mensal</span>
+              <h2>Boletim Supernova</h2>
+              <p>Textos da comunidade, coletânea de artes, repasses, problemas, avisos e indicações culturais.</p>
+              <a class="btn btn-primario" href="https://cefisma.com.br/supernova/boletim/">Ver todas as edições do Boletim</a>
+            </div>
+            <ul class="supernova-edicoes" aria-label="Edições recentes do Boletim">
+              <li><a href="https://cefisma.com.br/supernova/boletim/boletim18/"><span class="supernova-capa preview-supernova-capa">18</span><strong>Boletim Supernova nº 18</strong><small>Outubro de 2026</small></a></li>
+              <li><a href="https://cefisma.com.br/supernova/boletim/boletim17/"><span class="supernova-capa preview-supernova-capa">17</span><strong>Boletim Supernova nº 17</strong><small>Setembro de 2026</small></a></li>
+              <li><a href="https://cefisma.com.br/supernova/boletim/boletim16/"><span class="supernova-capa preview-supernova-capa">16</span><strong>Boletim Supernova nº 16</strong><small>Agosto de 2026</small></a></li>
+            </ul>
+          </article>
+
+          <article class="supernova-serie supernova-serie-folhetim">
+            <div class="supernova-serie-cabecalho">
+              <span class="tag">Informes especiais</span>
+              <h2>Folhetim Supernova</h2>
+              <p>Publicação de formato conciso para centralizar informações e comunicados importantes à comunidade do IFUSP.</p>
+              <a class="btn btn-linha" href="https://cefisma.com.br/supernova/folhetim/">Ver todas as edições do Folhetim</a>
+            </div>
+            <ul class="supernova-edicoes" aria-label="Edições recentes do Folhetim">
+              <li><a href="https://cefisma.com.br/supernova/folhetim/folhetim3/"><span class="supernova-capa preview-supernova-capa">03</span><strong>Folhetim Supernova #3</strong><small>4ª semana de Maio de 2026</small></a></li>
+              <li><a href="https://cefisma.com.br/supernova/folhetim/folhetim2/"><span class="supernova-capa preview-supernova-capa">02</span><strong>Folhetim Supernova #2</strong><small>2ª semana de Maio de 2026</small></a></li>
+              <li><a href="https://cefisma.com.br/supernova/folhetim/folhetim1/"><span class="supernova-capa preview-supernova-capa">01</span><strong>Folhetim Supernova #1</strong><small>1ª semana de Maio de 2026</small></a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <footer class="rodape">
+      <div class="wrap">
+        <div><h2>CEFISMA</h2><p>Centro Acadêmico do Instituto de Física da USP.</p><a href="mailto:cefisma@cefisma.org.br">cefisma@cefisma.org.br</a></div>
+        <div><h2>Navegação</h2><ul><li><a href="../">Início</a></li><li><a href="../quem-somos/">Quem somos</a></li><li><a href="../comunicacao/">Comunicação</a></li><li><a href="../participe/">Participe</a></li></ul></div>
+        <p class="nota">Prévia estática · <a href="https://www.instagram.com/cefisma/">Instagram do CEFISMA</a></p>
+      </div>
+    </footer>
+    <script src="../assets/js/main.js" defer></script>
+  </body>
+</html>

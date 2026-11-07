@@ -12,6 +12,17 @@ use Cefisma\Models\Publicacao;
 /** Arquivos do Boletim e Folhetim Supernova e página de cada edição. */
 final class SupernovaController extends Controller
 {
+    public function inicio(): void
+    {
+        the_post();
+        $this->render('supernova/inicio', [
+            'boletins'  => Edicao::todas(3, 1, 'boletim'),
+            'folhetins' => Edicao::todas(3, 1, 'folhetim'),
+            'url_boletim' => (string) get_post_type_archive_link(Edicao::TIPO),
+            'url_folhetim' => home_url('/supernova/folhetim/'),
+        ]);
+    }
+
     public function arquivo(): void
     {
         $serie = get_query_var('cefisma_serie') === 'folhetim' ? 'folhetim' : 'boletim';

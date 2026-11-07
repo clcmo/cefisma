@@ -25,8 +25,17 @@ final class NavegacaoController extends Controller
 
         if ($destino !== null) {
             $atts['href'] = $destino;
-            if (in_array($slug, ['supernova', 'boletim', 'boletim-supernova', 'folhetim', 'folhetim-supernova'], true)) {
-                $atual = is_post_type_archive(Edicao::TIPO) || is_singular(Edicao::TIPO) || get_query_var('cefisma_serie') === 'folhetim';
+            if ($slug === 'supernova') {
+                $atual = is_page('supernova') || is_post_type_archive(Edicao::TIPO) || is_singular(Edicao::TIPO);
+            } elseif (in_array($slug, ['boletim', 'boletim-supernova', 'folhetim', 'folhetim-supernova'], true)) {
+                $folhetim = in_array($slug, ['folhetim', 'folhetim-supernova'], true);
+                $serieAtual = (string) get_query_var('cefisma_serie');
+                if (is_post_type_archive(Edicao::TIPO)) {
+                    $atual = $folhetim ? $serieAtual === 'folhetim' : $serieAtual !== 'folhetim';
+                } elseif (is_singular(Edicao::TIPO)) {
+                    $edicaoFolhetim = get_post_meta(get_queried_object_id(), 'serie', true) === 'folhetim';
+                    $atual = $folhetim === $edicaoFolhetim;
+                }
             } else {
                 $destinoPath = trailingslashit((string) wp_parse_url($destino, PHP_URL_PATH));
                 $requisicaoPath = trailingslashit((string) wp_parse_url(
@@ -50,6 +59,7 @@ final class NavegacaoController extends Controller
         $paginas = [
             'inicio'      => home_url('/'),
             'quem-somos'  => home_url('/quem-somos/'),
+            'supernova'   => home_url('/supernova/'),
             'comunicacao' => home_url('/comunicacao/'),
             'participe'   => home_url('/participe/'),
             'boletim'     => (string) get_post_type_archive_link(Edicao::TIPO),
@@ -58,10 +68,6 @@ final class NavegacaoController extends Controller
             'folhetim-supernova' => home_url('/supernova/folhetim/'),
             'loja'        => Produto::urlLoja(),
         ];
-
-        if ($slug === 'supernova') {
-            return (string) get_post_type_archive_link(Edicao::TIPO);
-        }
 
         return $paginas[$slug] ?? null;
     }

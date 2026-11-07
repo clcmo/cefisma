@@ -13,7 +13,7 @@ final class Navegacao
         $itens = [
             ['rotulo' => 'Início',      'url' => home_url('/'),                  'classe' => ''],
             ['rotulo' => 'Quem somos',  'url' => home_url('/quem-somos/'),       'classe' => ''],
-            ['rotulo' => 'Supernova',   'url' => (string) get_post_type_archive_link(Edicao::TIPO) ?: home_url('/supernova/'), 'classe' => ''],
+            ['rotulo' => 'Supernova',   'url' => home_url('/supernova/'),       'classe' => ''],
             ['rotulo' => 'Comunicação', 'url' => home_url('/comunicacao/'),      'classe' => ''],
             ['rotulo' => 'Participe',   'url' => home_url('/participe/'),        'classe' => ''],
             ['rotulo' => 'Loja',        'url' => Produto::urlLoja(),             'classe' => 'menu-loja'],

@@ -14,6 +14,9 @@ use Cefisma\Models\Evento;
 /** Inicialização do tema: registra Models, Controllers, suportes e assets. */
 final class Theme
 {
+    private const PERMALINK_STRUCTURE = '/%category%/%postname%/';
+    private const PERMALINK_MIGRATION = 'category-postname-v1';
+
     /** Models que registram tipos de conteúdo (CPTs). */
     private const MODELS = [Edicao::class, Aviso::class, Evento::class];
 
@@ -31,6 +34,8 @@ final class Theme
         add_action('wp_enqueue_scripts', [self::class, 'assets']);
         add_action('admin_init', [self::class, 'criarPaginasExemplo']);
         add_action('after_switch_theme', [self::class, 'criarPaginasExemplo']);
+        add_action('admin_init', [self::class, 'migrarPermalinks']);
+        add_action('after_switch_theme', [self::class, 'configurarPermalinks']);
 
         foreach (self::MODELS as $model) {
             $model::register();
@@ -48,6 +53,11 @@ final class Theme
         }
 
         $paginas = [
+            [
+                'slug'     => 'supernova',
+                'titulo'   => 'Supernova',
+                'template' => 'page-supernova.php',
+            ],
             [
                 'slug'     => 'quem-somos',
                 'titulo'   => 'Quem somos',
@@ -91,6 +101,24 @@ final class Theme
         }
     }
 
+    /** Define posts como /categoria/postname e páginas como /postname. */
+    public static function configurarPermalinks(): void
+    {
+        update_option('permalink_structure', self::PERMALINK_STRUCTURE);
+        update_option('cefisma_permalink_migration', self::PERMALINK_MIGRATION);
+        flush_rewrite_rules();
+    }
+
+    /** Aplica uma vez a configuração quando o tema é atualizado sem reativação. */
+    public static function migrarPermalinks(): void
+    {
+        if (get_option('cefisma_permalink_migration') === self::PERMALINK_MIGRATION) {
+            return;
+        }
+
+        self::configurarPermalinks();
+    }
+
     /**
      * Chamado pelos arquivos de template (front-page.php etc.).
      * O WordPress escolhe o template; este método escolhe o Controller.
@@ -128,6 +156,7 @@ final class Theme
         wp_enqueue_style('cefisma', CEFISMA_URI . '/assets/css/main.css', ['cefisma-fontes'], CEFISMA_VERSION);
 
         $home = is_front_page();
+        $paginaSupernova = is_page_template('page-supernova.php');
         $supernova = is_post_type_archive(Edicao::TIPO) || is_singular(Edicao::TIPO);
         $woocommerce = function_exists('is_woocommerce') && (is_woocommerce() || is_cart() || is_checkout() || is_account_page());
         $publicacoes = $home || $supernova || is_home() || (!$woocommerce && (is_singular() || is_archive() || is_search()));
@@ -135,7 +164,7 @@ final class Theme
         if ($publicacoes) {
             wp_enqueue_style('cefisma-content', CEFISMA_URI . '/assets/css/content.css', ['cefisma'], CEFISMA_VERSION);
         }
-        if ($home || $supernova) {
+        if ($home || $supernova || $paginaSupernova) {
             wp_enqueue_style('cefisma-supernova', CEFISMA_URI . '/assets/css/supernova.css', ['cefisma'], CEFISMA_VERSION);
         }
         if ($supernova) {

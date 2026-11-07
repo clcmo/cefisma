@@ -1,4 +1,90 @@
 /* Supernova */
+.supernova-inicio {
+  padding-top: clamp(2rem, 5vw, 4rem);
+}
+.supernova-inicio .cabecalho-pagina {
+  max-width: 760px;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+.supernova-series {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+.supernova-serie {
+  min-width: 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--linha);
+  border-radius: 20px 20px 6px 20px;
+  background: #fff;
+}
+.supernova-serie-folhetim {
+  background: var(--lavanda);
+}
+.supernova-serie-cabecalho {
+  min-height: 17rem;
+}
+.supernova-serie-cabecalho h2 {
+  margin: 0.8rem 0;
+}
+.supernova-serie-cabecalho p {
+  max-width: 42ch;
+}
+.supernova-edicoes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 1.25rem 0 0;
+  border-top: 1px solid var(--linha);
+}
+.supernova-edicoes a {
+  display: block;
+  color: var(--tinta);
+  text-decoration: none;
+}
+.supernova-edicoes a:hover strong {
+  color: var(--magenta);
+  text-decoration: underline;
+}
+.supernova-capa {
+  display: block;
+  margin-bottom: 0.7rem;
+}
+.supernova-capa img,
+.supernova-capa svg {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 12px 24px -14px rgba(0, 0, 0, 0.55);
+}
+.supernova-edicoes strong,
+.supernova-edicoes small {
+  display: block;
+}
+.supernova-edicoes strong {
+  font: 600 0.9rem/1.3 var(--f-ui);
+}
+.supernova-edicoes small {
+  margin-top: 0.35rem;
+  color: var(--suave);
+  font: 500 0.8rem/1.35 var(--f-ui);
+}
+@media (max-width: 860px) {
+  .supernova-series {
+    grid-template-columns: 1fr;
+  }
+  .supernova-serie-cabecalho {
+    min-height: auto;
+  }
+}
+@media (max-width: 520px) {
+  .supernova-edicoes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 .faixa-supernova {
   display: grid;
   grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);

@@ -40,7 +40,7 @@ foreach ($itens as $item) {
         <?php if ($contribuicaoSupernova) : ?>
           <p><a class="btn btn-primario" href="<?php echo esc_url($contribuicaoSupernova['url']); ?>"><?php echo esc_html($contribuicaoSupernova['botao']); ?> sua contribuição</a></p>
         <?php else : ?>
-          <p><a class="btn btn-primario" href="<?php echo esc_url(home_url('/supernova/boletim/')); ?>">Conhecer o Supernova</a></p>
+          <p><a class="btn btn-primario" href="<?php echo esc_url(home_url('/supernova/')); ?>">Conhecer o Supernova</a></p>
         <?php endif; ?>
       </section>
 
@@ -64,7 +64,7 @@ foreach ($itens as $item) {
             </li>
           <?php endforeach; ?>
         </ul>
-        <p>Também é possível acompanhar os <a href="<?php echo esc_url(home_url('/comunicacao/')); ?>">informes</a> e as <a href="<?php echo esc_url(home_url('/supernova/boletim/')); ?>">publicações do Supernova</a>.</p>
+        <p>Também é possível acompanhar os <a href="<?php echo esc_url(home_url('/comunicacao/')); ?>">informes</a> e as <a href="<?php echo esc_url(home_url('/supernova/')); ?>">publicações do Supernova</a>.</p>
       </section>
 
       <?php if ($conteudo_extra !== '') : ?>

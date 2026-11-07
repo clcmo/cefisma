@@ -13,6 +13,7 @@
  */
 ?>
 <div class="wrap cabecalho-pagina">
+  <p class="meta"><a href="<?php echo esc_url(home_url('/supernova/')); ?>">← Supernova</a></p>
   <h1><?php echo $serie === 'folhetim' ? 'Folhetim Supernova' : 'Boletim Supernova'; ?></h1>
   <?php if ($serie === 'folhetim') : ?>
     <p class="lede">Criado durante a greve estudantil de 2026, o Folhetim Supernova reúne informações e comunicados para a comunidade IFUSPiana.</p>
