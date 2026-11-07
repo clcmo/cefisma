@@ -8,7 +8,8 @@ O tema requer PHP 7.4 ou superior e WordPress 6.4 ou superior.
 
 ```
 functions.php          só carrega o autoloader e chama Theme::boot()
-*.php (raiz)           templates finos: escolhem o Controller e a ação
+*.php (raiz)           templates do WordPress e pontos de entrada
+templates/pages/       modelos selecionáveis: page.php e páginas institucionais
 app/
   Core/                Autoloader, Theme (boot + dispatch), View, Controller, Campos
   Models/              dados: Edicao, Aviso, Evento, Publicacao, Produto, Navegacao, Participacao
@@ -26,10 +27,16 @@ Fluxo de uma requisição: o WordPress escolhe o template (`front-page.php`) →
 | `front-page.php` | `HomeController::index` |
 | `archive-edicao.php` | `SupernovaController::arquivo` |
 | `single-edicao.php` | `SupernovaController::edicao` |
-| `page.php`, `single.php` | `PaginaController::conteudo` |
+| `templates/pages/page.php` (via `page.php` na raiz), `single.php` | `PaginaController::conteudo` |
+| `templates/pages/page-quem-somos.php` | `PaginaController::quemSomos` |
+| `templates/pages/page-comunicacao.php` | `PaginaController::comunicacao` |
+| `templates/pages/page-participe.php` | `PaginaController::participe` |
+| `templates/pages/page-supernova.php` | `SupernovaController::inicio` |
 | `index.php`, `archive.php`, `search.php` | `PaginaController::listar` |
 | `404.php` | `PaginaController::naoEncontrado` |
 | `woocommerce.php` | `LojaController::loja` |
+
+Os modelos selecionáveis de página ficam em `templates/pages/`. O `page.php` na raiz é mantido como ponto de entrada exigido pela hierarquia de templates do WordPress; ele delega à pasta organizada. As páginas de exemplo usam os caminhos de template dessa pasta e os modelos antigos na raiz são atualizados automaticamente.
 
 ## Estilos
 

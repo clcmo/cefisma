@@ -56,22 +56,22 @@ final class Theme
             [
                 'slug'     => 'supernova',
                 'titulo'   => 'Supernova',
-                'template' => 'page-supernova.php',
+                'template' => 'templates/pages/page-supernova.php',
             ],
             [
                 'slug'     => 'quem-somos',
                 'titulo'   => 'Quem somos',
-                'template' => 'page-quem-somos.php',
+                'template' => 'templates/pages/page-quem-somos.php',
             ],
             [
                 'slug'     => 'comunicacao',
                 'titulo'   => 'Comunicação',
-                'template' => 'page-comunicacao.php',
+                'template' => 'templates/pages/page-comunicacao.php',
             ],
             [
                 'slug'     => 'participe',
                 'titulo'   => 'Participe',
-                'template' => 'page-participe.php',
+                'template' => 'templates/pages/page-participe.php',
             ],
         ];
 
@@ -79,7 +79,7 @@ final class Theme
             $existente = get_page_by_path($pagina['slug'], OBJECT, 'page');
             if ($existente) {
                 $templateAtual = get_page_template_slug($existente->ID);
-                if ($templateAtual === '' || $templateAtual === 'default') {
+                if ($templateAtual === '' || $templateAtual === 'default' || $templateAtual === basename($pagina['template'])) {
                     update_post_meta($existente->ID, '_wp_page_template', $pagina['template']);
                 }
                 continue;
@@ -156,7 +156,7 @@ final class Theme
         wp_enqueue_style('cefisma', CEFISMA_URI . '/assets/css/main.css', ['cefisma-fontes'], CEFISMA_VERSION);
 
         $home = is_front_page();
-        $paginaSupernova = is_page_template('page-supernova.php');
+        $paginaSupernova = is_page_template('templates/pages/page-supernova.php');
         $supernova = is_post_type_archive(Edicao::TIPO) || is_singular(Edicao::TIPO);
         $woocommerce = function_exists('is_woocommerce') && (is_woocommerce() || is_cart() || is_checkout() || is_account_page());
         $publicacoes = $home || $supernova || is_home() || (!$woocommerce && (is_singular() || is_archive() || is_search()));
