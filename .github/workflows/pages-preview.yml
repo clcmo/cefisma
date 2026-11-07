@@ -35,6 +35,7 @@ jobs:
           cp assets/css/*.css _site/assets/css/
           cp assets/js/main.js _site/assets/js/main.js
           cp assets/images/estampa-cefisma.svg _site/assets/images/estampa-cefisma.svg
+          cp assets/images/logo-cefisma-rodape.svg _site/assets/images/logo-cefisma-rodape.svg
           cp print-cefisma.svg _site/print-cefisma.svg
 
       - name: Upload Pages artifact

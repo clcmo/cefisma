@@ -362,6 +362,16 @@ main:focus {
   margin: 1.8rem auto 0.8rem;
   color: #fff;
 }
+.rodape-marca {
+  display: inline-flex;
+  max-width: 13rem;
+  line-height: 0;
+}
+.rodape .rodape-marca img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .rodape ul {
   list-style: none;
   margin: 0;

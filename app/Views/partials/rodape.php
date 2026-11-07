@@ -9,7 +9,11 @@
 <footer class="rodape">
   <div class="wrap">
     <div>
-      <h2>CEFISMA</h2>
+      <h2>
+        <a class="rodape-marca" href="<?php echo esc_url(home_url('/')); ?>" aria-label="CEFISMA, página inicial">
+          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/logo-cefisma-rodape.svg')); ?>" alt="CEFISMA" width="680" height="200" loading="lazy">
+        </a>
+      </h2>
       <p><?php echo esc_html($contato['sobre']); ?></p>
       <?php if (!empty($contato['site'])) : ?>
         <p><a href="<?php echo esc_url($contato['site']); ?>"><?php echo esc_html((string) wp_parse_url($contato['site'], PHP_URL_HOST)); ?></a></p>
