@@ -52,7 +52,7 @@
         <?php endforeach; ?>
       </ul>
     </div>
-    <p class="nota nota-tema">© <?php echo esc_html(wp_date('Y')); ?> CEFISMA</p>
+    <p class="nota nota-tema">© <?php echo esc_html(wp_date('Y')); ?> CEFISMA. Todos os direitos reservados. Criado por <a href="dev.camilaloliveira.com">Camila L. Oliveira </a></p>
   </div>
 </footer>
 <?php if ($whatsapp !== '') : ?>
