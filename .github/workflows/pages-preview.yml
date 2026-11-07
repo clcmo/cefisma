@@ -26,12 +26,13 @@ jobs:
 
       - name: Assemble site preview
         run: |
-          mkdir -p _site/assets/css _site/assets/js _site/assets/images _site/quem-somos _site/supernova _site/comunicacao _site/participe
+          mkdir -p _site/assets/css _site/assets/js _site/assets/images _site/quem-somos _site/supernova _site/comunicacao _site/participe _site/loja
           cp preview/index.html _site/index.html
           cp preview/quem-somos.html _site/quem-somos/index.html
           cp preview/supernova.html _site/supernova/index.html
           cp preview/comunicacao.html _site/comunicacao/index.html
           cp preview/participe.html _site/participe/index.html
+          cp preview/loja.html _site/loja/index.html
           cp assets/css/*.css _site/assets/css/
           cp assets/js/main.js _site/assets/js/main.js
           cp assets/images/estampa-cefisma.svg _site/assets/images/estampa-cefisma.svg

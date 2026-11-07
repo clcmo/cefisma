@@ -39,7 +39,10 @@ final class LojaController extends Controller
         woocommerce_content();
         $html = (string) ob_get_clean();
 
-        $this->render('pages/woocommerce', ['html' => $html]);
+        $this->render('pages/woocommerce', [
+            'html'       => $html,
+            'pagina_loja' => function_exists('is_shop') && is_shop(),
+        ]);
     }
 
     /* ---------- Hooks do checkout ---------- */

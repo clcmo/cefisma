@@ -11,7 +11,7 @@ final class Produto
 {
     /** Slug da categoria de produtos ligados ao Supernova (zine impressa, PDFs, etc.). */
     public const CATEGORIA_SUPERNOVA = 'supernova';
-    public const CATEGORIA_BLUSAS = 'blusas';
+    public const CATEGORIA_BLUSAS = 'camiseta';
 
     public static function ativa(): bool
     {
@@ -40,6 +40,8 @@ final class Produto
             'stock_status' => 'instock',
             'category'     => [self::CATEGORIA_BLUSAS],
             'limit'        => $limite,
+            'orderby'      => 'date',
+            'order'        => 'DESC',
         ]));
     }
 
